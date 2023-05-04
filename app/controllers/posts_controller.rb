@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       redirect_to :posts
     else
       flash[:notice] = "編集に失敗しました。"
-      render "edit"
+      render :edit,status: :unprocessable_entity
     end
     end
 

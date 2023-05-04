@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates :end_day, presence: true
   validates :title, length: { maximum: 20 }
   validates :schedule, length: { maximum: 500 }
-  validate :days, on: :create
+  validate :days, on: :create ,on: :update
 
   def days
     if start_day != nil
